@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class GameController : MonoBehaviour
 {
-	public GameObject camera;
+	public GameObject cam;
 	public int speed = 5;
 	Vector3 dir = Vector3.zero;
 
@@ -37,13 +37,13 @@ public class GameController : MonoBehaviour
 	}
 	Vector3 calcLeft()
 	{
-		Vector3 camLeft = -camera.transform.right;
+		Vector3 camLeft = -cam.transform.right;
 	    Vector3 left = new Vector3(camLeft.x, 0, camLeft.z);
 	    return left;
 	}
 
 	Vector3 calcForward() {
-		Vector3 cameForward = camera.transform.forward;
+		Vector3 cameForward = cam.transform.forward;
 	    Vector3 forward = new Vector3(cameForward.x, 0, cameForward.z);
 	    return forward;
 	}
@@ -88,7 +88,7 @@ public class GameController : MonoBehaviour
 	}
 
 	void Awake() {
-		camera = GameObject.FindWithTag("MainCamera");
+		cam = GameObject.FindWithTag("MainCamera");
 	}
 
     // Update is called once per frame
